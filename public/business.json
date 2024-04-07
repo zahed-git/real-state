@@ -1,0 +1,76 @@
+[
+    {
+      "id": "1",
+      "estate_title": "Cozy Apartment in Downtown",
+      "segment_name": "Residential",
+      "description": "This cozy apartment is located in the heart of downtown, offering convenience and comfort. Ideal for urban living enthusiasts.",
+      "price": "$800,000",
+      "status": "sale",
+      "area": "1200 sq ft",
+      "location": "456 Elm Street, Metropolis, NY",
+      "facilities": ["living room", "kitchen", "gym"],
+      "image": "https://i.ibb.co/Ph2WKZ3/table-with-cutlery-plates-2.png"
+    },
+    {
+      "id": "2",
+      "estate_title": "Seaside Villa with Private Beach Access",
+      "segment_name": "Vacation Homes",
+      "description": "Experience ultimate luxury in this seaside villa boasting private beach access. Perfect for those seeking a tranquil retreat.",
+      "price": "$3,500,000",
+      "status": "sale",
+      "area": "6000 sq ft",
+      "location": "789 Oceanfront Drive, Paradise Cove, CA",
+      "facilities": ["living room", "swimming pool", "kitchen", "private beach"],
+      "image": "https://i.ibb.co/9hCxyRX/near-pool-2.png"
+    },
+    {
+      "id": "3",
+      "estate_title": "Modern Loft in Arts District",
+      "segment_name": "Commercial",
+      "description": "This modern loft is situated in the vibrant arts district, offering a dynamic workspace for creative professionals.",
+      "price": "$1,200,000",
+      "status": "sale",
+      "area": "3000 sq ft",
+      "location": "101 Gallery Street, Artropolis, CA",
+      "facilities": ["open workspace", "conference room", "kitchenette"],
+      "image": "https://i.ibb.co/VqNJVjK/with-city-2.png"
+    },
+    {
+      "id": "4",
+      "estate_title": "Rustic Cabin Retreat in the Woods",
+      "segment_name": "Vacation Homes",
+      "description": "Escape to nature in this charming rustic cabin nestled in the woods. Enjoy the tranquility and serenity of the great outdoors.",
+      "price": "$500,000",
+      "status": "sale",
+      "area": "1500 sq ft",
+      "location": "123 Forest Lane, Wilderness, WA",
+      "facilities": ["living room", "fireplace", "deck"],
+      "image": "https://i.ibb.co/fpYvhpM/thailand-2.png"
+    },
+    {
+      "id": "5",
+      "estate_title": "Luxury Penthouse with Skyline Views",
+      "segment_name": "Residential",
+      "description": "Indulge in luxury living with this exquisite penthouse boasting panoramic skyline views and top-of-the-line amenities.",
+      "price": "$5,000,000",
+      "status": "sale",
+      "area": "8000 sq ft",
+      "location": "789 Highrise Avenue, Skyline City, NY",
+      "facilities": ["spacious terrace", "infinity pool", "gourmet kitchen"],
+      "image": "https://i.ibb.co/JBTx5VY/luxury-hotels-2.png"
+    },
+    {
+      "id": "6",
+      "estate_title": "Historic Mansion with Grand Ballroom",
+      "segment_name": "Residential",
+      "description": "Step back in time with this historic mansion featuring ornate architecture, expansive gardens, and a grand ballroom for lavish entertaining.",
+      "price": "$10,000,000",
+      "status": "sale",
+      "area": "15000 sq ft",
+      "location": "456 Mansion Lane, Heritage Hills, CA",
+      "facilities": ["ballroom", "gardens", "library", "home theater"],
+      "image": "https://i.ibb.co/86wPdVc/edit-2.png"
+    }
+  ]
+  
+  
