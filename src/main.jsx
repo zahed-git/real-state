@@ -17,7 +17,7 @@ import Singup from './Component/Singup/Singup';
 import AuthProvider from './Provider/AuthProvider';
 import Login from './Component/Login/Login';
 import PrivetRout from './PrivetRout/PrivetRout';
-import UserSettings from './Component/UserSettings/UserSettings';
+import Usersettings from './Component/UserSettings/UserSettings';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/usersettings",
-        element: <PrivetRout> <UserSettings></UserSettings> </PrivetRout> 
+        element: <Usersettings></Usersettings>
       },
       {
         path: "/blog",

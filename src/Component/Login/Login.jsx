@@ -33,6 +33,7 @@ const Login = () => {
                     setSucessMsg("Login successful")
                     e.target.reset()
                     navigate("/")
+                    toast.success('Successfully Login')
                     // ...
                 })
                 .catch((error) => {
@@ -67,6 +68,7 @@ const Login = () => {
             const loggedInUser = result.user;
             setUser(loggedInUser)
             navigate("/")
+            toast.success('Successfully Login')
             // ...
           }).catch((error) => {
             console.log('error', error.message)
@@ -79,6 +81,7 @@ const Login = () => {
             const loggedInUser = result.user;
             setUser(loggedInUser)
             navigate("/")
+            toast.success('Successfully Login')
           })
           .catch((error) => {
             console.log(error)
@@ -94,6 +97,7 @@ const Login = () => {
                        setUser(user)
                        setSucessMsg("Login sucessfully")
                        navigate("/")
+                       toast.success('Successfully Login')
                     } 
                     else {
                     }

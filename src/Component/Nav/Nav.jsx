@@ -18,10 +18,10 @@ const Nav = () => {
     {user &&
       <>
         <li><NavLink to='/user'>User Profile</NavLink></li>
-        <li><NavLink to='/usersettings'>User Settings</NavLink></li>
+
       </>
     }
-
+    <li><NavLink to='/usersettings'>User Settings</NavLink></li>
     <li><NavLink to='/blog'>Blog</NavLink></li>
     <li><NavLink to='/contact'>Contact us</NavLink></li>
   </>
@@ -52,7 +52,7 @@ const Nav = () => {
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
                     {/* ---------------------------- */}
-                    
+
                     <div className="tooltip" data-tip="hello">
                       <img alt="" src={user.photoURL} />
                     </div>
