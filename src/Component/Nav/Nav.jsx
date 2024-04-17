@@ -14,16 +14,17 @@ const Nav = () => {
   }
   const links = <>
     <li><NavLink to='/'>Home</NavLink></li>
-    { user &&
+    {user &&
       <>
-      <li><NavLink to='/update'>Update profile</NavLink></li>
-    <li><NavLink to='/user'>User Profile</NavLink></li>
+        <li><NavLink to='/update'>Update profile</NavLink></li>
+        <li><NavLink to='/user'>User Profile</NavLink></li>
       </>
     }
-    
+
     <li><NavLink to='/blog'>Blog</NavLink></li>
     <li><NavLink to='/contact'>Contact us</NavLink></li>
   </>
+
   return (
     <div className="navbar bg-base-100 fixed z-10">
       <div className="navbar-start">
@@ -44,10 +45,24 @@ const Nav = () => {
       </div>
       <div className="navbar-end">
         {
-          user ?<>
-            <span className="text-sm font-bold">{user.email? user.email: "Anonymous User"}</span>
+          user ? <>
+            <span className="text-sm font-bold">{user.photoURL ?
+              <>
+                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    {/* ---------------------------- */}
+                    <button data-tooltip-target="tooltip-bottom" data-tooltip-placement="bottom" ><img alt="Tailwind CSS Navbar component" src={user.photoURL} /></button>
+                    <div id="tooltip-bottom" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                      tooltip
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    {/* ---------------------------- */}
+                  </div>
+                </div>
+              </>
+              : "Anonymous User"}</span>
             <button className="btn btn-primary mx-2" onClick={handleLogOut}>LogOut</button>
-            </> 
+          </>
             :
             <Link to='/login'><button className="btn btn-primary mx-10">Sing-in</button></Link>
         }
