@@ -3,7 +3,7 @@ import auth from "../../firebase/firebase.init";
 import { useForm } from "react-hook-form"
 import { useRef, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
@@ -11,6 +11,7 @@ import { useContext } from "react";
 
 const Singup = () => {
   // -----------------------------------------
+  const navigate= useNavigate()
   const [showPassword, setShowPassord] = useState(false)
   const [user, setUser] = useState();
   const [errorMsg, setErrorMsg] = useState('')
@@ -23,6 +24,7 @@ const Singup = () => {
       .then((result) => {
         const loggedInUser = result.user;
         setUser(loggedInUser)
+        navigate('/')
         // ...
       }).catch((error) => {
         console.log('error', error.message)
@@ -34,6 +36,7 @@ const Singup = () => {
       .then((result) => {
         const loggedInUser = result.user;
         setUser(loggedInUser)
+        navigate('/')
       })
       .catch((error) => {
         console.log(error)
@@ -48,6 +51,7 @@ const Singup = () => {
                 //   const uid = user.uid;
                    setUser(user)
                    setSucessMsg("Login sucessfully")
+                   navigate('/')
                 } 
                 else {m
                 }
@@ -70,6 +74,7 @@ const Singup = () => {
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
   } = useForm()
@@ -97,6 +102,8 @@ const Singup = () => {
     .then((userCredential) => {
           setUser(userCredential.user)
           setSucessMsg("Account created successfully")
+          reset();
+          navigate('/')
         })
         .catch((error) => {
           setErrorMsg(error.message)

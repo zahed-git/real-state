@@ -9,41 +9,48 @@ import auth from "../firebase/firebase.init";
 export const AuthContext = createContext(null)
 
 const AuthProvider = ({ children }) => {
-    const googleProvider= new GoogleAuthProvider()
-    const gitHubProvider =new GithubAuthProvider()
+    const googleProvider = new GoogleAuthProvider()
+    const gitHubProvider = new GithubAuthProvider()
 
     const [user, setUser] = useState(null)
-
+    const [loading, setLoading] = useState(true);
     // -------normal-logUp-----
     const creatUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
-// ---------singIn--------
+    // ---------singIn--------
     const singInUser = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-// -----------------------google-log-in------
-const googleLog=()=>{
-    return signInWithPopup(auth,googleProvider)
-}
-// -------------git-Hub------
-const gitHubLog=()=>{
-    return signInWithPopup(auth,gitHubProvider)
-}
-// --------------signInAnonymously-------
-const anonymousLog=()=>{
-    return signInAnonymously(auth)
-}
+    // -----------------------google-log-in------
+    const googleLog = () => {
+        setLoading(true)
+        return signInWithPopup(auth, googleProvider)
+    }
+    // -------------git-Hub------
+    const gitHubLog = () => {
+        setLoading(true)
+        return signInWithPopup(auth, gitHubProvider)
+    }
+    // --------------signInAnonymously-------
+    const anonymousLog = () => {
+        setLoading(true)
+        return signInAnonymously(auth)
+    }
 
-// -----------log-out----------?
-const logOut = () => {
-    return signOut(auth)
-}
+    // -----------log-out----------?
+    const logOut = () => {
+        setLoading(true)
+        return signOut(auth)
+    }
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
+            setLoading(false)
             console.log("observing user", currentUser)
         })
         return () => {
@@ -53,7 +60,16 @@ const logOut = () => {
 
 
 
-    const authInfo = { user, creatUser, singInUser,googleLog,gitHubLog,anonymousLog, logOut }
+    const authInfo = {
+        user,
+        loading,
+        creatUser,
+        singInUser,
+        googleLog,
+        gitHubLog,
+        anonymousLog,
+        logOut
+    }
 
     return (
         <AuthContext.Provider value={authInfo}>

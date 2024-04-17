@@ -1,12 +1,13 @@
 import {onAuthStateChanged, sendPasswordResetEmail } from "firebase/auth";
 import auth from "../../firebase/firebase.init";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useContext } from "react";
 
 const Login = () => {
+    const navigate = useNavigate()
     const { singInUser,googleLog,gitHubLog,anonymousLog } = useContext(AuthContext)
     const [showPassword, setShowPassord] = useState(false)
     const [errorMsg, setErrorMsg] = useState('')
@@ -30,6 +31,8 @@ const Login = () => {
         .then((userCredential) => {
             setUser(userCredential.user)
                     setSucessMsg("Login successful")
+                    e.target.reset()
+                    navigate("/")
                     // ...
                 })
                 .catch((error) => {
@@ -63,6 +66,7 @@ const Login = () => {
           .then((result) => {
             const loggedInUser = result.user;
             setUser(loggedInUser)
+            navigate("/")
             // ...
           }).catch((error) => {
             console.log('error', error.message)
@@ -74,6 +78,7 @@ const Login = () => {
           .then((result) => {
             const loggedInUser = result.user;
             setUser(loggedInUser)
+            navigate("/")
           })
           .catch((error) => {
             console.log(error)
@@ -88,6 +93,7 @@ const Login = () => {
                     //   const uid = user.uid;
                        setUser(user)
                        setSucessMsg("Login sucessfully")
+                       navigate("/")
                     } 
                     else {
                     }
