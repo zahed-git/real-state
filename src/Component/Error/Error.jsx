@@ -1,4 +1,5 @@
 import { useRouteError } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Error=()=>{
   const error = useRouteError();
@@ -6,11 +7,12 @@ const Error=()=>{
 
   return (
     <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
+       <div className=" flex mt-14">
+            <div className="mx-auto text-center">
+            <h2 className="text-5xl font-bold my-6"> 404 page not found.</h2>
+            <Link className="" to='/'> click to  <button className="btn ">Home</button> button</Link>
+            </div>
+            </div>
     </div>
   );
 }

@@ -1,15 +1,9 @@
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
 import bann1 from '../../images/3d-rendering-810-540 -2.jpg'
 import bann2 from '../../images/3d-rendering-white-810-540-2.jpg'
 import bann3 from '../../images/spacious-810-540.jpg'
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+
 
 const Banner = () => {
     return (
