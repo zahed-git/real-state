@@ -18,5 +18,5 @@ const PrivetRout = ({childern}) => {
 export default PrivetRout;
 
 PrivetRout.propTypes = {
-    children: PropTypes.node
+    childern: PropTypes.node
 }

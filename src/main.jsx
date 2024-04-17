@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/usersettings",
-        element: <Usersettings></Usersettings>
+        element:<PrivetRout> <Usersettings></Usersettings></PrivetRout> 
       },
       {
         path: "/blog",

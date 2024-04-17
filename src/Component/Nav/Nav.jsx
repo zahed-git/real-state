@@ -18,11 +18,10 @@ const Nav = () => {
     {user &&
       <>
         <li><NavLink to='/user'>User Profile</NavLink></li>
-
+        <li><NavLink to='/usersettings'>User Settings</NavLink></li>
       </>
     }
-    <li><NavLink to='/usersettings'>User Settings</NavLink></li>
-    <li><NavLink to='/blog'>Blog</NavLink></li>
+     <li><NavLink to='/blog'>Blog</NavLink></li>
     <li><NavLink to='/contact'>Contact us</NavLink></li>
   </>
 
