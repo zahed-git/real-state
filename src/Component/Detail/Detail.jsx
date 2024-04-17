@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const Detail = () => {
     const { id } = useParams()
@@ -16,11 +17,14 @@ const Detail = () => {
         }
         fetchData()
     }, [id])
-    // console.log(flate)
     return (
-        <div className="sm:max-w-[340px] md:max-w-[1050px] lg:max-w-[1250px]">
+        <div>
+            <Helmet>
+                detail
+            </Helmet>
+            <div className="sm:max-w-[340px] md:max-w-[1050px] lg:max-w-[1250px]">
             <div className=" bg-origin-content hero min-h-screen w-full bg-center bg-contain bg-no-repeat bg-gradient-to-tl" style={{ backgroundImage: `url(${flate?.image})` }}>
-                <div className="card-body p-64  bg-opacity-50 bg-slate-200">
+                <div className="card-body p-64  bg-opacity-30 bg-slate-100">
                     <h2 className="card-title sm:text-xs lg:text-xl lg:font-bold text-black">{flate?.estate_title}</h2>
                     <h2 className="card-title sm:text-xs lg:text-xl lg:font-bold text-blue">Type : {flate?.segment_name}</h2>
                     <hr />
@@ -70,6 +74,8 @@ const Detail = () => {
                 </div>
             </div>
         </div>
+        </div>
+        
     );
 };
 

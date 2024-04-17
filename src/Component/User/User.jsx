@@ -1,11 +1,13 @@
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
+
 
 const User = () => {
     return (
         <div>
             <Helmet>
-                <title>User</title>
+              <title>user</title>
             </Helmet>
+            
             Its user
         </div>
     );
