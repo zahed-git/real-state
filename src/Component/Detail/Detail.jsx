@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Detail = () => {
     const { id } = useParams()
@@ -18,17 +18,15 @@ const Detail = () => {
     }, [id])
     // console.log(flate)
     return (
-        <div>
-            <div className="card lg:card-side bg-base-100 shadow-xl m-14">
-            {/* <div className="hero min-h-screen" style={{backgroundImage: 'url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)'}}> */}
-                <figure className='bg-slate-100 p-14 m-6 rounded-xl'><img className='max-w-[400px] max-h-[650px]' src={flate?.image} alt="Album" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">{flate?.estate_title}</h2>
-                    <h2 className="card-title">Type : {flate?.segment_name}</h2>
+        <div className="sm:max-w-[340px] md:max-w-[1050px] lg:max-w-[1250px]">
+            <div className=" bg-origin-content hero min-h-screen w-full bg-center bg-contain bg-no-repeat bg-gradient-to-tl" style={{ backgroundImage: `url(${flate?.image})` }}>
+                <div className="card-body p-64  bg-opacity-50 bg-slate-200">
+                    <h2 className="card-title sm:text-xs lg:text-xl lg:font-bold text-black">{flate?.estate_title}</h2>
+                    <h2 className="card-title sm:text-xs lg:text-xl lg:font-bold text-blue">Type : {flate?.segment_name}</h2>
                     <hr />
-                    <p><span className='text-xl font-semibold'>Category : </span>  {flate?.category }</p>
+                    <p className="sm:text-xs lg:text-xl lg:font-bold text-blue"><span className='sm:text-xl md:text-2xl'>Category : </span>  {flate?.category}</p>
                     <hr />
-                    <p><span className='text-xl font-semibold'>Detail : </span>  {flate?.description}</p>
+                    <p className="sm:text-xs lg:text-xl lg:font-bold text-blue"><span className='sm:text-xl md:text-2xl '>Detail : </span>  {flate?.description}</p>
                     <div className="flex gap-3 my-4">
                         <p className="font-bold">Tag :</p>
                         <div className="badge badge-outline p-4 text-green-600 font-bold bg-slate-100">#{flate?.facilities[0]}</div>
@@ -38,8 +36,8 @@ const Detail = () => {
                     <hr />
                     <div>
                         {/* ----------- */}
-                        <div className="overflow-x-auto">
-                            <table className="table">
+                        <div className="overflow-x-auto ">
+                            <table className="table sm:text-xs lg:text-xl lg:font-bold text-blue">
                                 {/* head */}
                                 <thead>
 
@@ -48,22 +46,22 @@ const Detail = () => {
                                     {/* row 1 */}
                                     <tr>
                                         <td>Price :</td>
-                                       
+
                                         <td>{flate?.price}</td>
                                     </tr>
                                     {/* row 2 */}
                                     <tr>
                                         <td>Area:</td>
-                                       
+
                                         <td>{flate?.area}</td>
                                     </tr>
                                     {/* row 3 */}
                                     <tr>
                                         <td>Location:</td>
-                                        
+
                                         <td>{flate?.location}</td>
                                     </tr>
-                                    
+
                                 </tbody>
                             </table>
                         </div>
