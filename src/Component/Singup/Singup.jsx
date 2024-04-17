@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 
 
@@ -47,8 +47,9 @@ const Singup = () => {
                 if (user) {
                 //   const uid = user.uid;
                    setUser(user)
+                   setSucessMsg("Login sucessfully")
                 } 
-                else {
+                else {m
                 }
               });
         })

@@ -35,17 +35,6 @@ const Login = () => {
                 .catch((error) => {
                     setErrorMsg(error.message)
                 });
-
-        // signInWithEmailAndPassword(auth, email, password)
-        //     .then((userCredential) => {
-        //         console.log(userCredential.user)
-        //         setSucessMsg("Login successful")
-        //         // ...
-        //     })
-        //     .catch((error) => {
-        //         setErrorMsg(error.message)
-        //         console.log(error)
-        //     });
     }
 
     const handleForgotPassword = e => {
@@ -98,6 +87,7 @@ const Login = () => {
                     if (user) {
                     //   const uid = user.uid;
                        setUser(user)
+                       setSucessMsg("Login sucessfully")
                     } 
                     else {
                     }
@@ -141,7 +131,7 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+                            <input  type={showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" required />
                             <span onClick={() => setShowPassord(!showPassword)} className="absolute top-14 right-2">
                                 {
                                     showPassword ? <FaRegEyeSlash></FaRegEyeSlash> : <FaRegEye></FaRegEye>

@@ -39,15 +39,12 @@ const Nav = () => {
       </div>
       <div className="navbar-end">
         {
-          user && <>
-            <span>{user.email}</span>
+          user ?<>
+            <span className="text-sm font-bold">{user.email? user.email: "Anonymous User"}</span>
             <button className="btn btn-primary mx-2" onClick={handleLogOut}>LogOut</button>
-            </>
-        }
-        {
-          !user && <>
+            </> 
+            :
             <Link to='/login'><button className="btn btn-primary mx-10">Sing-in</button></Link>
-          </>
         }
 
       </div>
