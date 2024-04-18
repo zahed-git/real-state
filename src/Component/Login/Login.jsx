@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useContext } from "react";
+import toast from "react-hot-toast";
 
 const Login = () => {
     const navigate = useNavigate()
@@ -38,6 +39,7 @@ const Login = () => {
                 })
                 .catch((error) => {
                     setErrorMsg(error.message)
+                    toast.error('Login error',error.message)
                 });
     }
 
@@ -54,9 +56,11 @@ const Login = () => {
         sendPasswordResetEmail(auth, email)
             .then(() => {
                 alert("check email")
+
             })
             .catch((error) => {
                 setErrorMsg(error.message)
+                toast.error('error',error.message)
             });
 
     }
@@ -72,6 +76,7 @@ const Login = () => {
             // ...
           }).catch((error) => {
             console.log('error', error.message)
+            toast.error('Login error',error.message)
           });
       }
     // --------------Git hub sing in---------
@@ -85,6 +90,7 @@ const Login = () => {
           })
           .catch((error) => {
             console.log(error)
+            toast.error('Login error',error.message)
           });
       }
     // -------------Annoymous---
@@ -105,6 +111,7 @@ const Login = () => {
             })
             .catch((error) => {
                 setErrorMsg (error.message);
+                toast.error('Login error',error.message)
                 // ...
             });
     }

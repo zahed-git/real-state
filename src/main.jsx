@@ -18,6 +18,7 @@ import AuthProvider from './Provider/AuthProvider';
 import Login from './Component/Login/Login';
 import PrivetRout from './PrivetRout/PrivetRout';
 import Usersettings from './Component/UserSettings/UserSettings';
+import { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
+    <Toaster></Toaster>
 
   </React.StrictMode>,
 )
