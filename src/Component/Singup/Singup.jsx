@@ -5,7 +5,6 @@ import { useRef, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import toast from "react-hot-toast";
 
